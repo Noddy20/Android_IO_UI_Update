@@ -1,0 +1,280 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    // Libraries applicable for all builds
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation commonLibraries.appCompatv7
+    //implementation commonLibraries.supportv4
+    implementation commonLibraries.cardView
+    implementation commonLibraries.recyclerView
+    implementation commonLibraries.design
+    //implementation commonLibraries.mediaRouter
+    implementation commonLibraries.preference
+
+    //implementation commonLibraries.retrofit
+    //implementation commonLibraries.gson
+    //implementation commonLibraries.okhttp
+    //implementation commonLibraries.eventbus
+
+    implementation commonLibraries.dagger
+    implementation commonLibraries.daggerAndroid
+    implementation commonLibraries.rxjava
+    implementation commonLibraries.rxandroid
+    implementation commonLibraries.rxjava2
+    implementation commonLibraries.rxandroid2
+    implementation commonLibraries.rxKotlin
+    implementation commonLibraries.rxDogTag
+    implementation commonLibraries.rxDogTagAutoDispose
+
+    //implementation commonLibraries.okhttpLoggingInterceptor
+    //implementation commonLibraries.retrofitRxJavaAdapter
+    //implementation commonLibraries.retrofitRxJava2Adapter
+    //implementation commonLibraries.retrofitGsonConverter
+    //implementation commonLibraries.butterKnife
+    //implementation commonLibraries.greenDao
+    //implementation commonLibraries.glide
+    //implementation commonLibraries.glideOkhttpIntegeration
+    implementation commonLibraries.constraintLayout
+    //implementation commonLibraries.progressBar
+
+    //implementation commonLibraries.qrCodeGeneration
+    implementation commonLibraries.androidKtx
+    //implementation commonLibraries.emojiSupport
+
+    //implementation gopayLibraries.scanmyqr
+    //implementation gopayLibraries.history
+    //implementation gopayLibraries.voucher
+
+    /*implementation(commonLibraries.deeplink) {
+        exclude group: 'com.squareup.okio'
+        exclude group: 'com.google.code.findbugs'
+    }
+    kapt(commonLibraries.deeplinkDispatchProcessor) {
+        exclude group: 'com.squareup.okio'
+        exclude group: 'com.google.code.findbugs'
+    }*/
+
+
+    //implementation opsPlatformLibraries.schemaViewAloha
+
+    // Markdown Renderer
+    /*implementation commonLibraries.markdownEmoji
+    implementation commonLibraries.markdownLogger
+    implementation commonLibraries.flexmark
+    implementation commonLibraries.flexmarkTables
+    implementation commonLibraries.flexmarkStrikeThrough
+    implementation commonLibraries.flexmarkTaskList
+    implementation commonLibraries.flexmarkAutoLink
+    implementation commonLibraries.flexmarkAbbr
+    implementation commonLibraries.flexmarkSuperScript
+    implementation commonLibraries.flexmarkFootNotes
+    implementation commonLibraries.flexmarkAttributes
+*/
+    implementation commonLibraries.autoDispose
+    implementation commonLibraries.autoDisposeAndroid
+    implementation commonLibraries.autoDisposeArch
+    //implementation commonLibraries.phoenix
+
+    //pagination
+    implementation commonLibraries.archPagination
+    implementation commonLibraries.rxPagination
+
+    implementation commonLibraries.lifecycleJava8
+
+    implementation commonLibraries.roomRuntime
+    implementation commonLibraries.roomRxJavaSupport
+
+    implementation commonLibraries.rxBinding
+
+    //implementation barcodeLibraries.zxing
+    //implementation barcodeLibraries.zxingEmbedded
+
+    //implementation commonLibraries.flowLayout
+
+    implementation commonLibraries.kotlinCoroutines
+    implementation commonLibraries.kotlinCoroutinesAndroid
+
+    /*api(commonLibraries.pushNotificationSdk) {
+        exclude group: 'com.gojek.android'
+    }*/
+
+    // Ops tech libraries
+    /*implementation opsPlatformLibraries.blueprint
+    implementation(opsPlatformLibraries.helpCenter) {
+        exclude group: 'com.gojek.android', module: 'blueprint'
+    }
+    implementation(opsPlatformLibraries.supportInbox)
+
+    // Evernote job library - needed for Conversations SDK
+    implementation commonLibraries.evernoteJob
+
+    // ThreeTenAbp
+    implementation commonLibraries.threeTenAbp*/
+
+    // Work Manager
+    implementation commonLibraries.workManagerRuntime
+    implementation commonLibraries.workManagerRxJava2
+    // To avoid ListenableFuture conflict with Guava.
+    //implementation "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"
+
+    // Include illustration library for other countries as well. Currently it is added only for indonesia
+    /*implementation commonLibraries.asphaltIllustrationsIn
+    implementation(commonLibraries.asphaltAloha) {
+        exclude group: 'androidx.constraintlayout'
+    }*/
+
+    //implementation commonLibraries.yearClass
+
+    //implementation commonLibraries.flexBox
+
+    //implementation commonLibraries.phoenix
+
+    // Annotation Processors
+    /*kapt(commonLibraries.deeplinkDispatchProcessor) {
+        exclude group: 'com.squareup.okio'
+    }*/
+    kapt commonLibraries.roomCompiler
+    kapt commonLibraries.daggerCompiler
+    kapt commonLibraries.daggerAndroidCompiler
+    //kapt commonLibraries.butterKnifeCompiler
+    //kapt commonLibraries.glideCompiler
+
+    compileOnly commonLibraries.javaxAnnotation
+
+    // Debug only libraries
+    debugImplementation debugLibraries.leakCanary
+    //debugImplementation debugLibraries.chucker
+    //debugImplementation courierLibraries.courierChuckMqtt
+
+    // Release only libraries
+    //releaseImplementation releaseLibraries.chucker
+    //releaseImplementation courierLibraries.courierChuckMqttNoOps
+
+    // Unit test libraries
+    testImplementation testLibraries.junit
+    testImplementation testLibraries.truth
+    testImplementation testLibraries.mockitoCore
+    testImplementation testLibraries.mockitoKotlin
+    testImplementation testLibraries.androidArchCoreTesting
+    testImplementation testLibraries.supportTestRules
+    testImplementation testLibraries.supportTestRunner
+    testImplementation testLibraries.androidTestCore
+    testImplementation testLibraries.junit5Core
+    testImplementation testLibraries.junit5Parameterized
+    testImplementation testLibraries.mockitoJUnit5
+    testRuntimeOnly testLibraries.junit5Engine
+    testRuntimeOnly testLibraries.junit5VintageEngine
+
+    // Instrumentation test libraries
+    androidTestImplementation testLibraries.junit
+    androidTestImplementation testLibraries.mockWebServer
+    androidTestImplementation testLibraries.roomTesting
+    androidTestImplementation testLibraries.androidArchCoreTesting
+    androidTestImplementation testLibraries.androidJunit
+    androidTestImplementation testLibraries.navigationTesting
+    debugImplementation(testLibraries.fragmentTesting) {
+        // https://github.com/android/android-test/issues/731
+        exclude group: 'androidx.test', module: 'monitor'
+    }
+
+    androidTestImplementation(testLibraries.androidTestRunner) {
+        exclude group: 'com.android.support'
+    }
+    androidTestImplementation(testLibraries.androidTestRules) {
+        exclude group: 'com.android.support'
+    }
+
+    androidTestImplementation(testLibraries.espressoCore) {
+        exclude group: 'com.android.support'
+        exclude group: 'com.google.code.findbugs'
+    }
+    androidTestImplementation(testLibraries.espressoIntents) {
+        exclude group: 'com.android.support'
+    }
+    androidTestImplementation(testLibraries.espressoContrib) {
+        exclude group: 'com.android.support'
+    }
+    implementation testLibraries.espressoIdlingResource
+
+    androidTestImplementation testLibraries.hamcrest
+    androidTestImplementation commonLibraries.dagger
+    androidTestImplementation commonLibraries.daggerAndroid
+    androidTestImplementation testLibraries.dexMaker
+    androidTestImplementation commonLibraries.kotlinStdLib
+    androidTestImplementation testLibraries.mockitoCore
+    androidTestImplementation testLibraries.mockitoKotlin
+    androidTestImplementation testLibraries.rxIdler
+    androidTestImplementation testLibraries.uiAutomator
+
+    //androidTestImplementation project(path: ':vidaSandbox')
+
+    androidTestUtil testLibraries.testOrchestrator
+
+    kaptAndroidTest commonLibraries.daggerCompiler
+    kaptAndroidTest commonLibraries.daggerAndroidCompiler
+
+    // Face mask detection
+    //implementation commonLibraries.faceMaskDetection
+
+   // implementation commonLibraries.brightcove
+
+    // Battery Analyzer
+    /*integrationImplementation (batteryAnalyzerLibraries.batteryAnalyzerDebug) {
+        transitive = true
+        exclude group: 'org.threeten'
+    }
+    releaseImplementation (batteryAnalyzerLibraries.batteryAnalyzer) {
+        transitive = true
+        exclude group: 'org.threeten'
+    }
+    debugImplementation (batteryAnalyzerLibraries.batteryAnalyzerDebug) {
+        transitive = true
+        exclude group: 'org.threeten'
+    }*/
+
+    // Courier Library
+    /*implementation courierLibraries.courier
+    implementation courierLibraries.mqttClient
+    implementation courierLibraries.courierGson
+    implementation courierLibraries.courierRx
+    implementation courierLibraries.courierAuthHttp*/
+
+
+}

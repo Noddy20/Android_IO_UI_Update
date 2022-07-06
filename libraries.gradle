@@ -1,0 +1,387 @@
+ext {
+
+    kotlin_version = '1.4.32'
+    gradle_plugin_version = '4.2.1'
+    flex_version = '0.28.32'
+    navigationVersion = "2.1.0"
+    dexguardPluginVersion = '1.1.12'
+    daggerVersion = "2.31.2"
+    daggerAssistedInjectVersion = "0.6.0"
+    okhttpVersion = "4.9.3"
+    retrofitVersion = "2.9.0"
+    leakCanaryVersion = "2.8.1"
+    deeplinkVersion = "5.4.3"
+    autoDispose = "1.4.0"
+    archLifecycle = '1.1.1'
+    archLifecycleVersion = '2.3.1'
+    roomVersion = '2.2.5'
+    coroutinesVersion = '1.5.1'
+    grpcVersion = '1.12.0'
+    chuckerVersion = '3.4.0'
+    phoenixVersion = '2.0.0'
+    rxBindingVersion = '3.0.0-alpha2'
+    pagingVersion = '2.1.2'
+    flexBoxVersion = "1.1.1"
+    threeTenAbpVersion = "1.3.1"
+    evernoteJobVersion = "1.2.6"
+    conversationsUiSdkVersion = '5.2.7'
+    pushNotificationSdkVersion = '1.1.0'
+    workManagerVersion = "2.4.0"
+    bluePrintVersion = "3.0.70"
+    helpCenterVersion = '4.16.42'
+    emojiSupportVersion = '28.0.0'
+    faceMaskDetectionVersion = "1.2.1.post2"
+    clevertapSdkVersion = "4.1.0"
+    brightcoveVersion = "6.16.0"
+    schemaViewVersion = "0.0.1-alpha20"
+    supportInboxVersion = "0.0.1-alpha77"
+    glideVersion = "4.12.0"
+    coreRuntimeVersion = "2.1.0"
+
+    //asphalt-aloha
+    asphaltVersion = "6.0.0"
+    alohaVersion = "22.2.0"
+
+    //face-recog
+    libGoVisionVer = "2.7"
+    libVIDAVer = "2.5"
+
+    // Battery Analyzer
+    batteryAnalyzerVersion = "1.1.5"
+
+    // Testing
+    junit5Version = "5.7.2"
+    supportTestVersion = "1.4.0"
+    androidxJunitVersion = "1.1.1"
+    espressoVersion = "3.1.0"
+    mockitoVersion = "3.12.4"
+    fragmentTestingVersion = "1.2.5"
+
+    //Config Provider
+    configProviderVersion = "2.1.2"
+
+    //lottie
+    lottieVersion = "3.7.1"
+
+    // Navigation
+    jetpackNavigation = "2.3.5"
+
+    //Courier
+    courierVersion = "0.3.9"
+
+    // V-Key V-OS Wrapper Library
+    idProtectionVersion = "1.3.9"
+
+    // Instabug
+    instabugVersion = "10.10.1.1"
+
+    //dexguard
+    dexguardRuntimeVersion = '9.1.12'
+    dexguardDeviceFingerPrintVersion = '1.0.0'
+
+    // RxIdler
+    rxIdlerVersion = '0.11.0'
+
+    // RxDogTag 1.x for RxJava2 only
+    rxDogTagVersion = '1.0.1'
+
+    uiAutomatorVersion = '2.2.0'
+
+
+    // Libraries applicable for all builds
+    commonLibraries = [
+            gson                     : "com.google.code.gson:gson:2.8.6",
+            eventbus                 : "org.greenrobot:eventbus:3.0.0",
+            pubnubAndroid            : 'com.pubnub:pubnub-gson:4.33.3',
+            javaxAnnotation          : "com.google.code.findbugs:jsr305:3.0.2",
+            timber                   : "com.jakewharton.timber:timber:4.7.1",
+            phoenix                  : "com.jakewharton:process-phoenix:${phoenixVersion}",
+
+            // ReactiveX
+            rxjava                   : "io.reactivex:rxjava:1.3.0",
+            rxandroid                : "io.reactivex:rxandroid:1.2.0",
+            rxjava2                  : "io.reactivex.rxjava2:rxjava:2.2.20",
+            rxandroid2               : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            rxKotlin                 : "io.reactivex.rxjava2:rxkotlin:2.4.0",
+            rxDogTag                 : "com.uber.rxdogtag:rxdogtag:${rxDogTagVersion}",
+            rxDogTagAutoDispose      : "com.uber.rxdogtag:rxdogtag-autodispose:${rxDogTagVersion}",
+
+            //greenDao                 : "org.greenrobot:greendao:2.2.0",
+            glide                    : "com.github.bumptech.glide:glide:${glideVersion}",
+            glideCompiler            : "com.github.bumptech.glide:compiler:${glideVersion}",
+            glideOkhttpIntegeration  : "com.github.bumptech.glide:okhttp3-integration:${glideVersion}",
+            constraintLayout         : "androidx.constraintlayout:constraintlayout:2.0.4",
+            progressBar              : "com.github.lzyzsd:circleprogress:1.1.0@aar",
+            //facebookConnectionClass  : "com.facebook.network.connectionclass:connectionclass:1.0.1",
+           // clevertap                : "com.clevertap.android:clevertap-android-sdk:${clevertapSdkVersion}",
+
+            // OkHttp
+            okhttp                   : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            okhttpLoggingInterceptor : "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
+
+            // Retrofit
+            retrofit                 : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitRxJavaAdapter    : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            retrofitRxJava2Adapter   : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            retrofitGsonConverter    : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+
+            // Butterknife
+            //butterKnife              : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            //butterKnifeCompiler      : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+
+            // Dagger
+            dagger                   : "com.google.dagger:dagger:${daggerVersion}",
+            daggerAndroid            : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerCompiler           : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerAndroidCompiler    : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            assistedInject           : "com.squareup.inject:assisted-inject-annotations-dagger2:${daggerAssistedInjectVersion}",
+            assistedInjectCompiler   : "com.squareup.inject:assisted-inject-processor-dagger2:${daggerAssistedInjectVersion}",
+
+            // Support libs
+            /*
+             * If you are bumping up appCompat version beyond 1.2.0, there is a workaround
+             * that prevented overriding locale configuration to be added.
+             * @see com.gojek.driver.common.src.main.java.androidx.appcompat.app.BaseContextWrappingDelegate.kt
+             * Please remove the workaround after validating the fix with release notes & a dry run.
+             */
+            appCompatv7              : "androidx.appcompat:appcompat:1.2.0",
+            supportv4                : "androidx.legacy:legacy-support-v4:1.0.0",
+            cardView                 : "androidx.cardview:cardview:1.0.0",
+            recyclerView             : "androidx.recyclerview:recyclerview:1.2.0",
+            design                   : "com.google.android.material:material:1.3.0",
+            mediaRouter              : "androidx.mediarouter:mediarouter:1.0.0",
+            preference               : "androidx.preference:preference:1.0.0",
+            androidKtx               : "androidx.core:core-ktx:1.6.0",
+            coreRuntime              : "androidx.arch.core:core-runtime:$coreRuntimeVersion",
+            navigationCore           : "androidx.navigation:navigation-fragment-ktx:$jetpackNavigation",
+            navigationUi             : "androidx.navigation:navigation-ui-ktx:$jetpackNavigation",
+
+
+            // Deeplink libs
+            deeplink                 : "com.airbnb:deeplinkdispatch:${deeplinkVersion}",
+            deeplinkDispatchProcessor: "com.airbnb:deeplinkdispatch-processor:${deeplinkVersion}",
+
+            //conversations
+            //conversationsUiSdk         : "com.gojek.android:conversations-ui:${conversationsUiSdkVersion}",
+
+            //pushNotificationSdk      : "com.gojek.android:push-notifications:${pushNotificationSdkVersion}",
+
+            // QR code generating lib
+            qrCodeGeneration         : "com.google.zxing:core:3.3.0",
+
+            // MarkDown Render lib
+            markdownEmoji            : 'com.github.tiagohm.MarkdownView:emoji:0.19.0@aar',
+            markdownLogger           : "com.orhanobut:logger:1.15",
+            flexmark                 : "com.vladsch.flexmark:flexmark:$flex_version",
+            flexmarkTables           : "com.vladsch.flexmark:flexmark-ext-tables:$flex_version",
+            flexmarkStrikeThrough    : "com.vladsch.flexmark:flexmark-ext-gfm-strikethrough:$flex_version",
+            flexmarkTaskList         : "com.vladsch.flexmark:flexmark-ext-gfm-tasklist:$flex_version",
+            flexmarkAutoLink         : "com.vladsch.flexmark:flexmark-ext-autolink:$flex_version",
+            flexmarkAbbr             : "com.vladsch.flexmark:flexmark-ext-abbreviation:$flex_version",
+            flexmarkSuperScript      : "com.vladsch.flexmark:flexmark-ext-superscript:$flex_version",
+            flexmarkFootNotes        : "com.vladsch.flexmark:flexmark-ext-footnotes:$flex_version",
+            flexmarkAttributes       : "com.vladsch.flexmark:flexmark-ext-attributes:$flex_version",
+
+            // Auto Dispose
+            autoDispose              : "com.uber.autodispose:autodispose:$autoDispose",
+            autoDisposeAndroid       : "com.uber.autodispose:autodispose-android:$autoDispose",
+            autoDisposeArch          : "com.uber.autodispose:autodispose-android-archcomponents:$autoDispose",
+
+            // Kotlin
+            kotlinStdLib             : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            kotlinCoroutines         : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            kotlinCoroutinesAndroid  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
+
+            lifecycleJava8           : "androidx.lifecycle:lifecycle-common-java8:$archLifecycleVersion",
+            archLifecycle            : "androidx.lifecycle:lifecycle-runtime:$archLifecycleVersion",
+            archLifecycleCompiler    : "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion",
+            archLifecycleProcess     : "androidx.lifecycle:lifecycle-process:$archLifecycleVersion",
+
+            //asphalt                  : "com.gojek.android:asphalt:$asphaltVersion",
+            //asphaltIllustrationsIn   : "com.gojek.android:asphalt-illustrations-indonesia:1.0.0",
+            //asphaltAloha             : "com.gojek.android:asphalt-aloha:$alohaVersion",
+            lottie                   : "com.airbnb.android:lottie:$lottieVersion",
+
+            // GRPC
+            grpcAndroid              : "io.grpc:grpc-android:$grpcVersion",
+            grpcOkhttp               : "io.grpc:grpc-okhttp:$grpcVersion",
+            jwtDecode                : "com.auth0.android:jwtdecode:1.1.1",
+
+            // Room
+            roomRuntime              : "androidx.room:room-runtime:$roomVersion",
+            roomCompiler             : "androidx.room:room-compiler:$roomVersion",
+            roomRxJavaSupport        : "androidx.room:room-rxjava2:$roomVersion",
+
+            cronet                   : "org.chromium.net:cronet-fallback:69.3497.100",
+            rxBinding                : "com.jakewharton.rxbinding3:rxbinding:$rxBindingVersion",
+            //yearClass                : "com.facebook.device.yearclass:yearclass:2.1.0",
+            flowLayout               : "com.nex3z:flow-layout:1.2.4",
+            archPagination           : "androidx.paging:paging-runtime:$pagingVersion",
+            rxPagination             : "androidx.paging:paging-rxjava2:$pagingVersion",
+
+            // Evernote job library - needed for Conversations SDK
+            //evernoteJob              : "com.evernote:android-job:$evernoteJobVersion",
+
+            // Navigation
+            navigationFragment       : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUi             : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+
+
+            // ThreeTenAbp
+            //threeTenAbp              : "com.jakewharton.threetenabp:threetenabp:$threeTenAbpVersion",
+            //threeTenBp               : "org.threeten:threetenbp:1.3.2",
+
+            //FlexBox Layout
+            flexBox                  : "com.google.android:flexbox:$flexBoxVersion",
+
+            // Work Manager
+            workManagerRuntime       : "androidx.work:work-runtime:$workManagerVersion",
+            workManagerRxJava2       : "androidx.work:work-rxjava2:$workManagerVersion",
+
+            commonsCodec             : 'commons-codec:commons-codec:1.14',
+
+            // Emoji Support
+            emojiSupport             : "com.android.support:support-emoji:$emojiSupportVersion",
+
+            //firebasePerformance      : 'com.google.firebase:firebase-perf:20.0.2',
+
+            //faceMaskDetection        : "com.gojek.android:GJFMDSDK:$faceMaskDetectionVersion",
+
+            brightcove               : "com.brightcove.player:exoplayer2:$brightcoveVersion",
+
+            devicefingerprinting      : "com.guardsquare.dexguard:devicefingerprinting-runtime:$dexguardDeviceFingerPrintVersion",
+            dexguardRuntime           : "com.guardsquare:dexguard-runtime:$dexguardRuntimeVersion",
+
+            // Kyc camera
+            kycCamera             : 'com.gojek.android:OJOSDK:1.6.0',
+            androidSvg                : "com.caverock:androidsvg-aar:1.4",
+    ]
+
+    instabug = [
+        core   : "com.instabug.library-gojek:instabug:$instabugVersion",
+        native : "com.instabug.library-gojek:instabug-ndk-crash:$instabugVersion"
+    ]
+
+    gopayLibraries = [
+            pin         : "com.gopay.android:pin:1.2.6",
+            scanmyqr    : "com.gopay.android:scanmyqr:1.2.7",
+            history     : "com.gopay.android:history:1.1.1",
+            paybyqr     : "com.gopay.android:paybyqr:1.2.9",
+            pulsa       : "com.gopay.android:pulsa:1.3.4",
+            voucher     : "com.gopay.android:voucher:1.3.14",
+    ]
+
+    configProviderLibraries = [
+        configs        : "com.gojek.android:configs:$configProviderVersion",
+        streamRx       : "com.gojek.android:configs-stream-rx:$configProviderVersion",
+        configExtension: "com.gojek.android:configs-extension:$configProviderVersion",
+        litmus         : "com.gojek.android:configs-provider-litmus:$configProviderVersion",
+        storePreference: "com.gojek.android:configs-store-preference:$configProviderVersion",
+        configSystrace : "com.gojek.android:configs-systrace:$configProviderVersion",
+        configFirebase : "com.gojek.android:configs-provider-firebase:$configProviderVersion",
+        configIntrumentation: "com.gojek.android:configs-instrumentation:$configProviderVersion"
+    ]
+
+    opsPlatformLibraries = [
+            universalDriverRegistration      : "com.gojek.android:driverregistration:2.4.1",
+            driverRegistrationNoOp  : "com.gojek.android:driverregistrationnoop:1.5.1",
+            blueprint               : "com.gojek.android:blueprint:$bluePrintVersion",
+            helpCenter              : "com.gojek.android:helpcenter:$helpCenterVersion",
+            schemaViewAloha     : "com.gojek.android:schemaview-aloha:$schemaViewVersion",
+            supportInbox               : "com.gojek.android:support-inbox:$supportInboxVersion"
+    ]
+
+    goVisionLibraries = [
+            volleyDep  : "com.android.volley:volley:1.2.1"
+    ]
+
+    barcodeLibraries = [
+            zxing        : "com.google.zxing:core:3.3.0",
+            zxingEmbedded: "com.journeyapps:zxing-android-embedded:3.5.0"
+    ]
+
+    batteryAnalyzerLibraries = [
+        batteryAnalyzer     : "com.gojek.batteryanalyzer:batteryanalyzer:$batteryAnalyzerVersion@aar",
+        batteryAnalyzerDebug: "com.gojek.batteryanalyzer:batteryanalyzer-debug:$batteryAnalyzerVersion@aar"
+    ]
+
+    // Libraries applicable for debug builds only
+    debugLibraries = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            haha      : "com.squareup.haha:haha:2.0.4",
+            trove4j   : "org.jetbrains.trove4j:trove4j:20160824",
+            chucker   : "com.github.ChuckerTeam.Chucker:library:${chuckerVersion}"
+    ]
+
+    // Libraries applicable for integration builds only
+    integrationLibraries = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            chucker   : "com.github.ChuckerTeam.Chucker:library:${chuckerVersion}"
+    ]
+
+    // Libraries applicable for release builds only
+    releaseLibraries = [
+            chucker   : "com.github.ChuckerTeam.Chucker:library-no-op:${chuckerVersion}"
+    ]
+
+    // Unit and Instrumentation test libraries
+    testLibraries = [
+            junit                 : "junit:junit:4.12",
+            junit5Core            : "org.junit.jupiter:junit-jupiter-api:$junit5Version",
+            junit5Parameterized   : "org.junit.jupiter:junit-jupiter-params:$junit5Version",
+            junit5Engine          : "org.junit.jupiter:junit-jupiter-engine:$junit5Version",
+            junit5VintageEngine   :"org.junit.vintage:junit-vintage-engine:$junit5Version",
+            mockitoCore           : "org.mockito:mockito-core:$mockitoVersion",
+            mockitoInline         : "org.mockito:mockito-inline:$mockitoVersion",
+            mockitoJUnit5         : "org.mockito:mockito-junit-jupiter:$mockitoVersion",
+            truth                 : "com.google.truth:truth:1.0",
+            androidJunit          : "androidx.test.ext:junit-ktx:$androidxJunitVersion",
+
+            mockWebServer         : "com.squareup.okhttp3:mockwebserver:${okhttpVersion}",
+            supportTestRunner     : "androidx.test:runner:$supportTestVersion",
+            supportTestRules      : "androidx.test:rules:$supportTestVersion",
+            fragmentTesting       : "androidx.fragment:fragment-testing:$fragmentTestingVersion",
+            testOrchestrator      : "androidx.test:orchestrator:1.4.1",
+
+            // Espresso dependencies
+            espressoCore          : "androidx.test.espresso:espresso-core:$espressoVersion",
+            espressoContrib       : "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            espressoIntents       : "androidx.test.espresso:espresso-intents:$espressoVersion",
+            espressoIdlingResource: "androidx.test.espresso:espresso-idling-resource:$espressoVersion",
+
+            // AndroidJUnitRunner and JUnit Rules
+            androidTestRunner     : "androidx.test:runner:$supportTestVersion",
+            androidTestRules      : "androidx.test:rules:$supportTestVersion",
+            hamcrest              : 'org.hamcrest:hamcrest-library:2.2',
+
+            mockitoKotlin         : "com.nhaarman:mockito-kotlin:1.5.0",
+            roomTesting           : "androidx.room:room-testing:$roomVersion",
+            okhttpIdlingResource  : "com.jakewharton.espresso:okhttp3-idling-resource:1.0.0",
+            dexMaker              : "com.linkedin.dexmaker:dexmaker-mockito:2.25.0",
+
+            // Arch components
+            androidTestCore       : "androidx.test:core:1.2.0",
+            androidArchCoreTesting: "androidx.arch.core:core-testing:2.1.0",
+            junitParams           : "pl.pragmatists:JUnitParams:1.1.0",
+            archUnit              : "com.tngtech.archunit:archunit:0.14.1",
+            navigationTesting     : "androidx.navigation:navigation-testing:$jetpackNavigation",
+
+            rxIdler               : "com.squareup.rx.idler:rx2-idler:${rxIdlerVersion}",
+            uiAutomator           : "androidx.test.uiautomator:uiautomator:${uiAutomatorVersion}"
+    ]
+
+    // courier library
+    courierLibraries = [
+        courier              : "com.gojek.android:courier:$courierVersion",
+        mqttClient           : "com.gojek.android:mqtt-client:$courierVersion",
+        courierGson          : "com.gojek.android:courier-message-adapter-gson:$courierVersion",
+        courierRx            : "com.gojek.android:courier-stream-adapter-rxjava2:$courierVersion",
+        courierChuckMqtt     : "com.gojek.android:chuck-mqtt:$courierVersion",
+        courierChuckMqttNoOps: "com.gojek.android:chuck-mqtt-no-ops:$courierVersion",
+        courierAuthHttp      : "com.gojek.android:courier-auth-http:$courierVersion"
+    ]
+
+    vkeyLibraries = [
+            identityProtection    : "com.gojek.android:identity-protection:${idProtectionVersion}"
+    ]
+}
